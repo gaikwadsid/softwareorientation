@@ -1,6 +1,8 @@
 package settings
 
 import (
+	"fmt"
+
 	"github.com/caarlos0/env/v11"
 )
 
@@ -10,11 +12,12 @@ type Settings struct {
 }
 
 // TOOD: implement loading the environment variables
+
 func Load() (Settings, error) {
 	settings, err := env.ParseAs[Settings]()
 	if err != nil {
 		return Settings{}, err
 	}
-	// fmt.Printf("settings: %v", settings)
-	return settings, nil
+	fmt.Printf("settings: %v", settings)
+	return env.ParseAs[Settings]()
 }

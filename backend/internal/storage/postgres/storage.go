@@ -8,7 +8,6 @@ import (
 	"github.com/GenerateNU/cooked/backend/internal/settings"
 	"github.com/GenerateNU/cooked/backend/internal/types"
 	"github.com/jmoiron/sqlx"
-
 	_ "github.com/lib/pq"
 )
 
