@@ -1,5 +1,7 @@
 package settings
 
+import "fmt"
+
 type Postgres struct {
 	Host     string `env:"HOST"`
 	Name     string `env:"NAME"`
@@ -10,5 +12,6 @@ type Postgres struct {
 
 // TODO: implement the connection string
 func (p Postgres) Connection() string {
-	return ""
+	return fmt.Sprintf(
+		"host=%s dbname=%s port=%d user=%s password=%s sslmode=require",p.Host, p.Name, p.Port, p.User, p.Password,)
 }

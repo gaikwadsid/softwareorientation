@@ -11,6 +11,7 @@ type Settings struct {
 }
 
 // TOOD: implement loading the environment variables
+
 func Load() (Settings, error) {
 	settings, err := env.ParseAs[Settings]()
 	if err != nil {
