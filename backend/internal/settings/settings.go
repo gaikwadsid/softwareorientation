@@ -2,10 +2,8 @@ package settings
 
 import (
 	"fmt"
-
 	"github.com/caarlos0/env/v11"
 )
-
 
 type Settings struct {
 	Application `envPrefix:"APP_"`
@@ -20,5 +18,5 @@ func Load() (Settings, error) {
 		return Settings{}, err
 	}
 	fmt.Printf("settings: %v", settings)
-	return settings, nil
+	return env.ParseAs[Settings]()
 }
