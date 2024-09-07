@@ -2,7 +2,6 @@ package postgres
 
 import (
 	"context"
-	"fmt"
 	"log/slog"
 
 	"github.com/GenerateNU/cooked/backend/internal/settings"
@@ -43,7 +42,6 @@ func (db *DB) GetRecipes(ctx context.Context) ([]types.Recipe, error) {
 		return nil, err
 	}
 
-	fmt.Printf("got recipes: %v", recipes)
 	return recipes, nil
 }
 
