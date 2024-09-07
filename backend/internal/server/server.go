@@ -34,6 +34,9 @@ func setupRoutes(app *fiber.App, service *handlers.Service) {
 	app.Get("/hello/:name", service.Hello)
 
 	// TODO: register your routes here
+	app.Get("/recipes", service.GetRecipes)
+	app.Post("/recipes", service.Hello)
+
 }
 
 func setupApp() *fiber.App {
