@@ -3,8 +3,10 @@ module github.com/GenerateNU/cooked/backend
 go 1.22.4
 
 require (
+	github.com/caarlos0/env/v11 v11.2.2
 	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/joho/godotenv v1.5.1
+	github.com/lib/pq v1.10.9
 )
 
 require (

@@ -5,6 +5,7 @@ import (
 
 	"github.com/GenerateNU/cooked/backend/internal/settings"
 	"github.com/jmoiron/sqlx"
+	_ "github.com/lib/pq"
 )
 
 type DB struct {
@@ -14,7 +15,8 @@ type DB struct {
 // TODO: implement connecting
 func New(settings settings.Postgres) *DB {
 	slog.Info("creating new postgres db", "settings", settings, "connection", settings.Connection())
-	return &DB{}
+	
+	return &DB{db: sqlx.MustConnect("postgres",settings.Connection())}
 }
 
 func (db *DB) Ping() error {
