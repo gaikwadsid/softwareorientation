@@ -13,6 +13,6 @@ type Storage interface {
 }
 
 type Reciper interface {
-	// CreateRecipe(ctx context.Context, recipe types.Recipe) (types.Recipe, error)
+	CreateRecipe(ctx context.Context, recipe types.Recipe) (types.Recipe, error)
 	GetRecipes(ctx context.Context) ([]types.Recipe, error)
 }
