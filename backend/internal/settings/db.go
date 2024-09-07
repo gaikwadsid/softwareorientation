@@ -13,5 +13,7 @@ type Postgres struct {
 // TODO: implement the connection string
 func (p Postgres) Connection() string {
 	return fmt.Sprintf(
-		"host=%s dbname=%s port=%d user=%s password=%s sslmode=require",p.Host, p.Name, p.Port, p.User, p.Password,)
+		"host=%s dbname=%s port=%d user=%s password=%s sslmode=require",
+		p.Host, p.Name, p.Port, p.User, p.Password,
+	)
 }
