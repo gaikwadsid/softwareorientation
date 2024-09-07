@@ -1,11 +1,11 @@
 package settings
 
 type Postgres struct {
-	Host     string
-	Name     string
-	Port     int
-	User     string
-	Password string
+	Host     string `env:"HOST"`
+	Name     string `env:"NAME"`
+	Port     int    `env:"PORT"`
+	User     string `env:"USER"`
+	Password string `env:"PASSWORD"`
 }
 
 // TODO: implement the connection string
